@@ -1,8 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 
 const { producten } = require("./producten");
 
 const app = express();
+
+// CORS pakket toevoegen als middleware
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("Dank u voor de aanvraag!");
